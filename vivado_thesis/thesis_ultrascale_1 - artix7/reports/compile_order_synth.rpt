@@ -1,0 +1,18 @@
+Source compile order for 'synthesis' with fileset 'sources_1' in source management mode 'All':
+Index  File Name        Used_In      File_Type  Library         Ngc Wrapper  Full Path Name
+-----  ---------------  -----------  ---------  --------------  -----------  --------------------------------------------------------------------------------------------------------------------------------
+1      config.vhd       Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/config.vhd
+2      control.vhd      Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/control.vhd
+3      multiplier.vhd   Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/multiplier.vhd
+4      sigmoid_IP.vhd   Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/sigmoid_IP.vhd
+5      neuron.vhd       Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/neuron.vhd
+6      sigmoid_lut.vhd  Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/sigmoid_lut.vhd
+7      nn_rgb.vhd       Synth & Sim  VHDL       xil_defaultlib  No           C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - artix7/src/nn_rgb.vhd
+
+
+Missing instances for 'synthesis' with fileset 'sources_1':
+Index  Instance Path  File Path  Line
+-----  -------------  ---------  ----
+< empty >
+
+
