@@ -71,13 +71,13 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd}
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd}
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd}
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_IP.vhd}
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd}
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd}
-  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/config.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/control.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/multiplier.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/sigmoid_IP.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/neuron.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/sigmoid_lut.vhd}
+  {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/sources_1/new/nn_rgb.vhd}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -88,7 +88,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/constrs_1/new/nn_rgb_measurement_only_spartan7.xdc}}
+set_property used_in_implementation false [get_files {{C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/constrs_1/new/nn_rgb_measurement_only_spartan7.xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7.srcs/utils_1/imports/synth_1/nn_rgb.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

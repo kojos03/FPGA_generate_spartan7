@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-| Date         : Thu Mar 19 16:58:27 2026
+| Date         : Thu Mar 19 21:58:47 2026
 | Host         : DESKTOP-0NKI8SO running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file nn_rgb_control_sets_placed.rpt
 | Design       : nn_rgb
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    13 |
-|    Minimum number of control sets                        |    13 |
+| Total control sets                                       |    20 |
+|    Minimum number of control sets                        |    20 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    48 |
+| Unused register locations in slices containing registers |    42 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    13 |
+| Total control sets |    20 |
 | >= 0 to < 4        |     0 |
 | >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     1 |
-| >= 12 to < 14      |     9 |
+| >= 12 to < 14      |     7 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     1 |
+| >= 16              |    10 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             209 |           66 |
+| No           | No                    | No                     |             209 |           61 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             135 |           59 |
+| No           | Yes                   | No                     |             269 |          106 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
@@ -70,22 +70,29 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+---------------+--------------------------------------------------------+------------------+----------------+--------------+
-|   Clock Signal   | Enable Signal |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
-+------------------+---------------+--------------------------------------------------------+------------------+----------------+--------------+
-|  clk_o_OBUF_BUFG |               | gen[2].gen2[0].knot/sigmoid/U_ROM/dout_r[7]_i_1_n_0    |                5 |              8 |         1.60 |
-|  clk_o_OBUF_BUFG |               | gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r[7]_i_1__0_n_0 |                3 |              8 |         2.67 |
-|  clk_o_OBUF_BUFG |               | reset                                                  |                3 |             11 |         3.67 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[1].knot/sigmoid/U_ROM/SR[0]                |                5 |             12 |         2.40 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[4].knot/sigmoid/U_ROM/SR[0]                |                6 |             12 |         2.00 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[3].knot/sigmoid/U_ROM/SR[0]                |                4 |             12 |         3.00 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[2].knot/sigmoid/U_ROM/SR[0]                |                5 |             12 |         2.40 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[0].knot/sigmoid/U_ROM/SR[0]                |                6 |             12 |         2.00 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[5].knot/sigmoid/U_ROM/SR[0]                |                5 |             12 |         2.40 |
-|  clk_o_OBUF_BUFG |               | gen[2].gen2[0].knot/sigmoid/U_ROM/SR[0]                |                6 |             12 |         2.00 |
-|  clk_o_OBUF_BUFG |               | gen[1].gen2[6].knot/sigmoid/U_ROM/SR[0]                |                5 |             12 |         2.40 |
-|  clk_o_OBUF_BUFG |               | gen[2].gen2[1].knot/sigmoid/U_ROM/SR[0]                |                6 |             12 |         2.00 |
-|  clk_o_OBUF_BUFG |               |                                                        |               66 |            220 |         3.33 |
-+------------------+---------------+--------------------------------------------------------+------------------+----------------+--------------+
++------------------+---------------+----------------------------------------------------------+------------------+----------------+--------------+
+|   Clock Signal   | Enable Signal |                     Set/Reset Signal                     | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+---------------+----------------------------------------------------------+------------------+----------------+--------------+
+|  clk_o_OBUF_BUFG |               | gen[2].gen2[0].knot/sigmoid/U_ROM/dout_r[7]_i_1_n_0      |                3 |              8 |         2.67 |
+|  clk_o_OBUF_BUFG |               | gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r[7]_i_1__0_n_0   |                3 |              8 |         2.67 |
+|  clk_o_OBUF_BUFG |               | reset                                                    |                3 |             11 |         3.67 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[3].knot/sigmoid/U_ROM/SR[0]                  |                6 |             12 |         2.00 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[0].knot/sigmoid/U_ROM/SR[0]                  |                6 |             12 |         2.00 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[2].knot/sigmoid/U_ROM/SR[0]                  |                5 |             12 |         2.40 |
+|  clk_o_OBUF_BUFG |               | gen[2].gen2[0].knot/sigmoid/U_ROM/SR[0]                  |                5 |             12 |         2.40 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[4].knot/sigmoid/U_ROM/SR[0]                  |                5 |             12 |         2.40 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[5].knot/sigmoid/U_ROM/SR[0]                  |                6 |             12 |         2.00 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[6].knot/sigmoid/U_ROM/SR[0]                  |                5 |             12 |         2.40 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[0].knot/sigmoid/U_ROM/dout_r0_carry_i_9_0    |                4 |             16 |         4.00 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[2].knot/sigmoid/U_ROM/dout_r0_carry_i_9__1_0 |                5 |             16 |         3.20 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[6].knot/sigmoid/U_ROM/dout_r0_carry_i_9__5_0 |                6 |             16 |         2.67 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[1].knot/sigmoid/U_ROM/dout_r0_carry_i_9__0_0 |                5 |             16 |         3.20 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[3].knot/sigmoid/U_ROM/dout_r0_carry_i_9__2_0 |                7 |             16 |         2.29 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[4].knot/sigmoid/U_ROM/dout_r0_carry_i_9__3_0 |                6 |             16 |         2.67 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[5].knot/sigmoid/U_ROM/dout_r0_carry_i_9__4_0 |                6 |             16 |         2.67 |
+|  clk_o_OBUF_BUFG |               | gen[1].gen2[1].knot/sigmoid/U_ROM/SR[0]                  |               11 |             23 |         2.09 |
+|  clk_o_OBUF_BUFG |               | gen[2].gen2[1].knot/sigmoid/U_ROM/SR[0]                  |                9 |             23 |         2.56 |
+|  clk_o_OBUF_BUFG |               |                                                          |               61 |            220 |         3.61 |
++------------------+---------------+----------------------------------------------------------+------------------+----------------+--------------+
 
 

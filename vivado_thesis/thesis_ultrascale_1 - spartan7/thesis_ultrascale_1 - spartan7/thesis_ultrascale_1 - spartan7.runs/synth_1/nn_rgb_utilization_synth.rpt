@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-| Date         : Thu Mar 19 16:52:41 2026
+| Date         : Thu Mar 19 21:55:44 2026
 | Host         : DESKTOP-0NKI8SO running 64-bit major release  (build 9200)
 | Command      : report_utilization -file nn_rgb_utilization_synth.rpt -pb nn_rgb_utilization_synth.pb
 | Design       : nn_rgb
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 5035 |     0 |          0 |     64000 |  7.87 |
-|   LUT as Logic             | 5024 |     0 |          0 |     64000 |  7.85 |
+| Slice LUTs*                | 5038 |     0 |          0 |     64000 |  7.87 |
+|   LUT as Logic             | 5027 |     0 |          0 |     64000 |  7.85 |
 |   LUT as Memory            |   11 |     0 |          0 |     17600 |  0.06 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |   11 |     0 |            |           |       |
@@ -155,7 +155,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT1     | 1180 |                 LUT |
 | LUT2     | 1119 |                 LUT |
 | CARRY4   | 1032 |          CarryLogic |
-| LUT5     |  759 |                 LUT |
+| LUT5     |  755 |                 LUT |
 | LUT6     |  754 |                 LUT |
 | LUT4     |  388 |                 LUT |
 | FDRE     |  320 |        Flop & Latch |
