@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-| Date         : Thu Mar 19 22:01:12 2026
+| Date         : Thu Mar 19 22:33:45 2026
 | Host         : DESKTOP-0NKI8SO running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file nn_rgb_timing_summary_routed.rpt -pb nn_rgb_timing_summary_routed.pb -rpx nn_rgb_timing_summary_routed.rpx -warn_on_violation
 | Design       : nn_rgb
@@ -154,9 +154,9 @@ Timing constraints are not met.
 | -------------
 ------------------------------------------------------------------------------------------------
 
-Clock   Waveform(ns)       Period(ns)      Frequency(MHz)
------   ------------       ----------      --------------
-clk_in  {0.000 6.734}      13.468          74.250          
+Clock  Waveform(ns)       Period(ns)      Frequency(MHz)
+-----  ------------       ----------      --------------
+clk    {0.000 6.734}      13.468          74.250          
 
 
 ------------------------------------------------------------------------------------------------
@@ -166,7 +166,7 @@ clk_in  {0.000 6.734}      13.468          74.250
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk_in            -17.348    -4222.226                    256                  976        0.066        0.000                      0                  976        5.880        0.000                       0                   525  
+clk               -17.348    -4222.226                    256                  976        0.066        0.000                      0                  976        5.880        0.000                       0                   525  
 
 
 ------------------------------------------------------------------------------------------------
@@ -203,8 +203,8 @@ Path Group    From Clock    To Clock
 
 Path Group    From Clock    To Clock    
 ----------    ----------    --------    
-(none)        clk_in                      
-(none)                      clk_in        
+(none)        clk                         
+(none)                      clk           
 
 
 ------------------------------------------------------------------------------------------------
@@ -214,8 +214,8 @@ Path Group    From Clock    To Clock
 
 
 ---------------------------------------------------------------------------------------------------
-From Clock:  clk_in
-  To Clock:  clk_in
+From Clock:  clk
+  To Clock:  clk
 
 Setup :          256  Failing Endpoints,  Worst Slack      -17.348ns,  Total Violation    -4222.226ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.066ns,  Total Violation        0.000ns
@@ -227,12 +227,12 @@ Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack (VIOLATED) :        -17.348ns  (required time - arrival time)
   Source:                 gen[2].gen2[1].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r_reg[2]/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.701ns  (logic 19.803ns (64.504%)  route 10.898ns (35.496%))
   Logic Levels:           44  (CARRY4=28 DSP48E1=3 LUT1=2 LUT2=2 LUT3=6 LUT4=1 LUT5=1 LUT6=1)
   Clock Path Skew:        -0.152ns (DCD - SCD + CPR)
@@ -247,7 +247,7 @@ Slack (VIOLATED) :        -17.348ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -380,7 +380,7 @@ Slack (VIOLATED) :        -17.348ns  (required time - arrival time)
     SLICE_X34Y90         FDRE                                         r  gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -399,12 +399,12 @@ Slack (VIOLATED) :        -17.348ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.318ns  (required time - arrival time)
   Source:                 gen[1].gen2[3].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[3].knot/sigmoid/U_ROM/prod_r_reg_i_6__2_psdsp_1/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.670ns  (logic 18.009ns (58.718%)  route 12.661ns (41.282%))
   Logic Levels:           44  (CARRY4=28 DSP48E1=2 LUT1=2 LUT2=1 LUT3=5 LUT4=2 LUT5=2 LUT6=2)
   Clock Path Skew:        -0.053ns (DCD - SCD + CPR)
@@ -419,7 +419,7 @@ Slack (VIOLATED) :        -17.318ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -551,7 +551,7 @@ Slack (VIOLATED) :        -17.318ns  (required time - arrival time)
     SLICE_X70Y64         FDRE                                         r  gen[1].gen2[3].knot/sigmoid/U_ROM/prod_r_reg_i_6__2_psdsp_1/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -570,12 +570,12 @@ Slack (VIOLATED) :        -17.318ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.301ns  (required time - arrival time)
   Source:                 gen[2].gen2[1].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r_reg[1]/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.611ns  (logic 19.803ns (64.692%)  route 10.808ns (35.308%))
   Logic Levels:           44  (CARRY4=28 DSP48E1=3 LUT1=2 LUT2=2 LUT3=6 LUT4=1 LUT5=1 LUT6=1)
   Clock Path Skew:        -0.152ns (DCD - SCD + CPR)
@@ -590,7 +590,7 @@ Slack (VIOLATED) :        -17.301ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -723,7 +723,7 @@ Slack (VIOLATED) :        -17.301ns  (required time - arrival time)
     SLICE_X35Y90         FDRE                                         r  gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -742,12 +742,12 @@ Slack (VIOLATED) :        -17.301ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.296ns  (required time - arrival time)
   Source:                 gen[2].gen2[1].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r_reg[4]/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.608ns  (logic 19.803ns (64.698%)  route 10.805ns (35.302%))
   Logic Levels:           44  (CARRY4=28 DSP48E1=3 LUT1=2 LUT2=2 LUT3=6 LUT4=1 LUT5=1 LUT6=1)
   Clock Path Skew:        -0.152ns (DCD - SCD + CPR)
@@ -762,7 +762,7 @@ Slack (VIOLATED) :        -17.296ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -895,7 +895,7 @@ Slack (VIOLATED) :        -17.296ns  (required time - arrival time)
     SLICE_X35Y90         FDRE                                         r  gen[2].gen2[1].knot/sigmoid/U_ROM/dout_r_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -914,12 +914,12 @@ Slack (VIOLATED) :        -17.296ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.259ns  (required time - arrival time)
   Source:                 gen[1].gen2[2].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_4__1_psdsp_1/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.418ns  (logic 17.468ns (57.427%)  route 12.950ns (42.573%))
   Logic Levels:           43  (CARRY4=27 DSP48E1=2 LUT1=2 LUT2=1 LUT3=4 LUT4=2 LUT5=3 LUT6=2)
   Clock Path Skew:        -0.247ns (DCD - SCD + CPR)
@@ -934,7 +934,7 @@ Slack (VIOLATED) :        -17.259ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -1063,7 +1063,7 @@ Slack (VIOLATED) :        -17.259ns  (required time - arrival time)
     SLICE_X75Y60         FDRE                                         r  gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_4__1_psdsp_1/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -1082,12 +1082,12 @@ Slack (VIOLATED) :        -17.259ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.225ns  (required time - arrival time)
   Source:                 gen[1].gen2[0].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[0].knot/sigmoid/U_ROM/prod_r_reg_i_3_psdsp_1/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.400ns  (logic 19.135ns (62.944%)  route 11.265ns (37.056%))
   Logic Levels:           45  (CARRY4=28 DSP48E1=3 LUT1=2 LUT2=3 LUT3=5 LUT4=1 LUT5=2 LUT6=1)
   Clock Path Skew:        -0.253ns (DCD - SCD + CPR)
@@ -1102,7 +1102,7 @@ Slack (VIOLATED) :        -17.225ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -1237,7 +1237,7 @@ Slack (VIOLATED) :        -17.225ns  (required time - arrival time)
     SLICE_X10Y60         FDRE                                         r  gen[1].gen2[0].knot/sigmoid/U_ROM/prod_r_reg_i_3_psdsp_1/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -1256,12 +1256,12 @@ Slack (VIOLATED) :        -17.225ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.224ns  (required time - arrival time)
   Source:                 gen[1].gen2[0].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[0].knot/sigmoid/U_ROM/prod_r_reg_i_5_psdsp_1/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.398ns  (logic 19.135ns (62.948%)  route 11.263ns (37.052%))
   Logic Levels:           45  (CARRY4=28 DSP48E1=3 LUT1=2 LUT2=3 LUT3=5 LUT4=1 LUT5=2 LUT6=1)
   Clock Path Skew:        -0.255ns (DCD - SCD + CPR)
@@ -1276,7 +1276,7 @@ Slack (VIOLATED) :        -17.224ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -1411,7 +1411,7 @@ Slack (VIOLATED) :        -17.224ns  (required time - arrival time)
     SLICE_X10Y63         FDRE                                         r  gen[1].gen2[0].knot/sigmoid/U_ROM/prod_r_reg_i_5_psdsp_1/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -1430,12 +1430,12 @@ Slack (VIOLATED) :        -17.224ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.201ns  (required time - arrival time)
   Source:                 gen[1].gen2[2].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_7__1_psdsp_1/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.376ns  (logic 17.468ns (57.506%)  route 12.908ns (42.493%))
   Logic Levels:           43  (CARRY4=27 DSP48E1=2 LUT1=2 LUT2=1 LUT3=4 LUT4=2 LUT5=3 LUT6=2)
   Clock Path Skew:        -0.246ns (DCD - SCD + CPR)
@@ -1450,7 +1450,7 @@ Slack (VIOLATED) :        -17.201ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -1579,7 +1579,7 @@ Slack (VIOLATED) :        -17.201ns  (required time - arrival time)
     SLICE_X74Y59         FDRE                                         r  gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_7__1_psdsp_1/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -1598,12 +1598,12 @@ Slack (VIOLATED) :        -17.201ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.184ns  (required time - arrival time)
   Source:                 gen[1].gen2[2].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_6__1_psdsp/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.323ns  (logic 17.468ns (57.606%)  route 12.855ns (42.394%))
   Logic Levels:           43  (CARRY4=27 DSP48E1=2 LUT1=2 LUT2=1 LUT3=4 LUT4=2 LUT5=3 LUT6=2)
   Clock Path Skew:        -0.246ns (DCD - SCD + CPR)
@@ -1618,7 +1618,7 @@ Slack (VIOLATED) :        -17.184ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -1747,7 +1747,7 @@ Slack (VIOLATED) :        -17.184ns  (required time - arrival time)
     SLICE_X75Y59         FDRE                                         r  gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_6__1_psdsp/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -1766,12 +1766,12 @@ Slack (VIOLATED) :        -17.184ns  (required time - arrival time)
 
 Slack (VIOLATED) :        -17.164ns  (required time - arrival time)
   Source:                 gen[1].gen2[2].knot/sumAdress_reg[15]_inv/C
-                            (rising edge-triggered cell FDSE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_6__1_psdsp_1/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            13.468ns  (clk_in rise@13.468ns - clk_in rise@0.000ns)
+  Requirement:            13.468ns  (clk rise@13.468ns - clk rise@0.000ns)
   Data Path Delay:        30.323ns  (logic 17.468ns (57.606%)  route 12.855ns (42.394%))
   Logic Levels:           43  (CARRY4=27 DSP48E1=2 LUT1=2 LUT2=1 LUT3=4 LUT4=2 LUT5=3 LUT6=2)
   Clock Path Skew:        -0.246ns (DCD - SCD + CPR)
@@ -1786,7 +1786,7 @@ Slack (VIOLATED) :        -17.164ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -1915,7 +1915,7 @@ Slack (VIOLATED) :        -17.164ns  (required time - arrival time)
     SLICE_X74Y59         FDRE                                         r  gen[1].gen2[2].knot/sigmoid/U_ROM/prod_r_reg_i_6__1_psdsp_1/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)    13.468    13.468 r  
+                         (clock clk rise edge)       13.468    13.468 r  
     AB21                                              0.000    13.468 r  clk (IN)
                          net (fo=0)                   0.000    13.468    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778    14.246 r  clk_IBUF_inst/O
@@ -1940,12 +1940,12 @@ Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack (MET) :             0.066ns  (arrival time - required time)
   Source:                 y_reg[0][4]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            y_reg[7][4]_srl7/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.196ns  (logic 0.141ns (71.838%)  route 0.055ns (28.162%))
   Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
@@ -1955,7 +1955,7 @@ Slack (MET) :             0.066ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -1969,7 +1969,7 @@ Slack (MET) :             0.066ns  (arrival time - required time)
     SLICE_X34Y63         SRL16E                                       r  y_reg[7][4]_srl7/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -1988,12 +1988,12 @@ Slack (MET) :             0.066ns  (arrival time - required time)
 
 Slack (MET) :             0.127ns  (arrival time - required time)
   Source:                 y_reg[0][5]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            y_reg[7][5]_srl7/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.255ns  (logic 0.141ns (55.309%)  route 0.114ns (44.691%))
   Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
@@ -2003,7 +2003,7 @@ Slack (MET) :             0.127ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2017,7 +2017,7 @@ Slack (MET) :             0.127ns  (arrival time - required time)
     SLICE_X34Y63         SRL16E                                       r  y_reg[7][5]_srl7/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2036,12 +2036,12 @@ Slack (MET) :             0.127ns  (arrival time - required time)
 
 Slack (MET) :             0.128ns  (arrival time - required time)
   Source:                 y_reg[0][1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            y_reg[7][1]_srl7/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.251ns  (logic 0.141ns (56.078%)  route 0.110ns (43.922%))
   Logic Levels:           0  
   Clock Path Skew:        0.014ns (DCD - SCD - CPR)
@@ -2051,7 +2051,7 @@ Slack (MET) :             0.128ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2065,7 +2065,7 @@ Slack (MET) :             0.128ns  (arrival time - required time)
     SLICE_X34Y63         SRL16E                                       r  y_reg[7][1]_srl7/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2084,12 +2084,12 @@ Slack (MET) :             0.128ns  (arrival time - required time)
 
 Slack (MET) :             0.135ns  (arrival time - required time)
   Source:                 y_reg[0][0]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            y_reg[7][0]_srl7/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.251ns  (logic 0.141ns (56.078%)  route 0.110ns (43.922%))
   Logic Levels:           0  
   Clock Path Skew:        0.014ns (DCD - SCD - CPR)
@@ -2099,7 +2099,7 @@ Slack (MET) :             0.135ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2113,7 +2113,7 @@ Slack (MET) :             0.135ns  (arrival time - required time)
     SLICE_X34Y63         SRL16E                                       r  y_reg[7][0]_srl7/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2132,12 +2132,12 @@ Slack (MET) :             0.135ns  (arrival time - required time)
 
 Slack (MET) :             0.143ns  (arrival time - required time)
   Source:                 y_reg[0][2]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            y_reg[7][2]_srl7/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.251ns  (logic 0.141ns (56.078%)  route 0.110ns (43.922%))
   Logic Levels:           0  
   Clock Path Skew:        0.014ns (DCD - SCD - CPR)
@@ -2147,7 +2147,7 @@ Slack (MET) :             0.143ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2161,7 +2161,7 @@ Slack (MET) :             0.143ns  (arrival time - required time)
     SLICE_X34Y63         SRL16E                                       r  y_reg[7][2]_srl7/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2180,12 +2180,12 @@ Slack (MET) :             0.143ns  (arrival time - required time)
 
 Slack (MET) :             0.164ns  (arrival time - required time)
   Source:                 de_0_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            control/de_delay_reg[7]_srl7___control_vs_delay_reg_r_5/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.297ns  (logic 0.141ns (47.466%)  route 0.156ns (52.534%))
   Logic Levels:           0  
   Clock Path Skew:        0.016ns (DCD - SCD - CPR)
@@ -2195,7 +2195,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2209,7 +2209,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
     SLICE_X2Y35          SRL16E                                       r  control/de_delay_reg[7]_srl7___control_vs_delay_reg_r_5/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2228,12 +2228,12 @@ Slack (MET) :             0.164ns  (arrival time - required time)
 
 Slack (MET) :             0.164ns  (arrival time - required time)
   Source:                 hs_0_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            control/hs_delay_reg[7]_srl7___control_vs_delay_reg_r_5/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.295ns  (logic 0.141ns (47.737%)  route 0.154ns (52.263%))
   Logic Levels:           0  
   Clock Path Skew:        0.016ns (DCD - SCD - CPR)
@@ -2243,7 +2243,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2257,7 +2257,7 @@ Slack (MET) :             0.164ns  (arrival time - required time)
     SLICE_X2Y35          SRL16E                                       r  control/hs_delay_reg[7]_srl7___control_vs_delay_reg_r_5/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2276,12 +2276,12 @@ Slack (MET) :             0.164ns  (arrival time - required time)
 
 Slack (MET) :             0.168ns  (arrival time - required time)
   Source:                 y_reg[0][7]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            y_reg[7][7]_srl7/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.364ns  (logic 0.141ns (38.687%)  route 0.223ns (61.313%))
   Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
@@ -2291,7 +2291,7 @@ Slack (MET) :             0.168ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2305,7 +2305,7 @@ Slack (MET) :             0.168ns  (arrival time - required time)
     SLICE_X34Y63         SRL16E                                       r  y_reg[7][7]_srl7/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2324,12 +2324,12 @@ Slack (MET) :             0.168ns  (arrival time - required time)
 
 Slack (MET) :             0.172ns  (arrival time - required time)
   Source:                 control/de_delay_reg[9]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            de_out_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.260ns  (logic 0.141ns (54.225%)  route 0.119ns (45.775%))
   Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
@@ -2339,7 +2339,7 @@ Slack (MET) :             0.172ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2353,7 +2353,7 @@ Slack (MET) :             0.172ns  (arrival time - required time)
     SLICE_X0Y37          FDRE                                         r  de_out_reg/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2371,12 +2371,12 @@ Slack (MET) :             0.172ns  (arrival time - required time)
 
 Slack (MET) :             0.172ns  (arrival time - required time)
   Source:                 vs_0_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            control/vs_delay_reg[7]_srl7___control_vs_delay_reg_r_5/D
-                            (rising edge-triggered cell SRL16E clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
-  Path Group:             clk_in
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk
   Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_in rise@0.000ns - clk_in rise@0.000ns)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
   Data Path Delay:        0.297ns  (logic 0.141ns (47.418%)  route 0.156ns (52.582%))
   Logic Levels:           0  
   Clock Path Skew:        0.016ns (DCD - SCD - CPR)
@@ -2386,7 +2386,7 @@ Slack (MET) :             0.172ns  (arrival time - required time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2400,7 +2400,7 @@ Slack (MET) :             0.172ns  (arrival time - required time)
     SLICE_X2Y35          SRL16E                                       r  control/vs_delay_reg[7]_srl7___control_vs_delay_reg_r_5/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -2423,7 +2423,7 @@ Slack (MET) :             0.172ns  (arrival time - required time)
 
 Pulse Width Checks
 --------------------------------------------------------------------------------------
-Clock Name:         clk_in
+Clock Name:         clk
 Waveform(ns):       { 0.000 6.734 }
 Period(ns):         13.468
 Sources:            { clk }
@@ -2464,7 +2464,7 @@ High Pulse Width  Fast    SRL16E/CLK   n/a            0.854         6.734       
 
 --------------------------------------------------------------------------------------
 Path Group:  (none)
-From Clock:  clk_in
+From Clock:  clk
   To Clock:  
 
 Max Delay            28 Endpoints
@@ -2476,7 +2476,7 @@ Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
   Source:                 clk
-                            (clock source 'clk_in'  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (clock source 'clk'  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            clk_o
                             (output port)
   Path Group:             (none)
@@ -2491,7 +2491,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in fall edge)     6.734     6.734 f  
+                         (clock clk fall edge)        6.734     6.734 f  
     AB21                                              0.000     6.734 f  clk (IN)
                          net (fo=0)                   0.000     6.734    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     7.643 f  clk_IBUF_inst/O
@@ -2505,7 +2505,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[4]_lopt_replica_2/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[4]
                             (output port)
   Path Group:             (none)
@@ -2520,7 +2520,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2538,7 +2538,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[7]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[7]
                             (output port)
   Path Group:             (none)
@@ -2553,7 +2553,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2571,7 +2571,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            r_out[0]
                             (output port)
   Path Group:             (none)
@@ -2586,7 +2586,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2604,7 +2604,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[0]_lopt_replica_2/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[0]
                             (output port)
   Path Group:             (none)
@@ -2619,7 +2619,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2637,7 +2637,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[5]_lopt_replica_2/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[5]
                             (output port)
   Path Group:             (none)
@@ -2652,7 +2652,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2670,7 +2670,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[2]_lopt_replica_2/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[2]
                             (output port)
   Path Group:             (none)
@@ -2685,7 +2685,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2703,7 +2703,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[7]/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            r_out[7]
                             (output port)
   Path Group:             (none)
@@ -2718,7 +2718,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2736,7 +2736,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[1]_lopt_replica_2/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[1]
                             (output port)
   Path Group:             (none)
@@ -2751,7 +2751,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2769,7 +2769,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[3]_lopt_replica_2/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            g_out[3]
                             (output port)
   Path Group:             (none)
@@ -2784,7 +2784,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.909     0.909 r  clk_IBUF_inst/O
@@ -2808,7 +2808,7 @@ Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
   Source:                 clk
-                            (clock source 'clk_in'  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (clock source 'clk'  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            clk_o
                             (output port)
   Path Group:             (none)
@@ -2823,7 +2823,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2837,7 +2837,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 hs_out_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            hs_out
                             (output port)
   Path Group:             (none)
@@ -2852,7 +2852,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2870,7 +2870,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[6]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            b_out[6]
                             (output port)
   Path Group:             (none)
@@ -2885,7 +2885,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2903,7 +2903,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[3]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            b_out[3]
                             (output port)
   Path Group:             (none)
@@ -2918,7 +2918,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2936,7 +2936,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 vs_out_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            vs_out
                             (output port)
   Path Group:             (none)
@@ -2951,7 +2951,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -2969,7 +2969,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[2]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            b_out[2]
                             (output port)
   Path Group:             (none)
@@ -2984,7 +2984,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -3002,7 +3002,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 de_out_reg/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            de_out
                             (output port)
   Path Group:             (none)
@@ -3017,7 +3017,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -3035,7 +3035,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[0]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            b_out[0]
                             (output port)
   Path Group:             (none)
@@ -3050,7 +3050,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -3068,7 +3068,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[1]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            b_out[1]
                             (output port)
   Path Group:             (none)
@@ -3083,7 +3083,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -3101,7 +3101,7 @@ Slack:                    inf
 
 Slack:                    inf
   Source:                 r_out_reg[5]_lopt_replica/C
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Destination:            b_out[5]
                             (output port)
   Path Group:             (none)
@@ -3116,7 +3116,7 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.206     0.206 r  clk_IBUF_inst/O
@@ -3139,7 +3139,7 @@ Slack:                    inf
 --------------------------------------------------------------------------------------
 Path Group:  (none)
 From Clock:  
-  To Clock:  clk_in
+  To Clock:  clk
 
 Max Delay           196 Endpoints
 Min Delay           196 Endpoints
@@ -3152,7 +3152,7 @@ Slack:                    inf
   Source:                 r_in[5]
                             (input port)
   Destination:            gen[1].gen2[4].knot/gen[0].mult/prod_r_reg/A[5]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        7.291ns  (logic 0.931ns (12.774%)  route 6.360ns (87.226%))
@@ -3176,7 +3176,7 @@ Slack:                    inf
     DSP48_X1Y2           DSP48E1                                      r  gen[1].gen2[4].knot/gen[0].mult/prod_r_reg/A[5]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3189,7 +3189,7 @@ Slack:                    inf
   Source:                 g_in[2]
                             (input port)
   Destination:            gen[1].gen2[3].knot/gen[1].mult/prod_r_reg/A[2]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.788ns  (logic 0.936ns (13.785%)  route 5.853ns (86.215%))
@@ -3213,7 +3213,7 @@ Slack:                    inf
     DSP48_X1Y38          DSP48E1                                      r  gen[1].gen2[3].knot/gen[1].mult/prod_r_reg/A[2]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3226,7 +3226,7 @@ Slack:                    inf
   Source:                 b_in[5]
                             (input port)
   Destination:            gen[1].gen2[4].knot/gen[2].mult/prod_r_reg/A[5]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.634ns  (logic 0.897ns (13.526%)  route 5.737ns (86.474%))
@@ -3250,7 +3250,7 @@ Slack:                    inf
     DSP48_X1Y3           DSP48E1                                      r  gen[1].gen2[4].knot/gen[2].mult/prod_r_reg/A[5]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3263,7 +3263,7 @@ Slack:                    inf
   Source:                 g_in[6]
                             (input port)
   Destination:            gen[1].gen2[3].knot/gen[1].mult/prod_r_reg/A[6]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.573ns  (logic 0.903ns (13.738%)  route 5.670ns (86.262%))
@@ -3287,7 +3287,7 @@ Slack:                    inf
     DSP48_X1Y38          DSP48E1                                      r  gen[1].gen2[3].knot/gen[1].mult/prod_r_reg/A[6]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3300,7 +3300,7 @@ Slack:                    inf
   Source:                 b_in[5]
                             (input port)
   Destination:            gen[1].gen2[3].knot/gen[2].mult/prod_r_reg/A[5]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.564ns  (logic 0.897ns (13.670%)  route 5.667ns (86.330%))
@@ -3324,7 +3324,7 @@ Slack:                    inf
     DSP48_X1Y39          DSP48E1                                      r  gen[1].gen2[3].knot/gen[2].mult/prod_r_reg/A[5]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3337,7 +3337,7 @@ Slack:                    inf
   Source:                 b_in[2]
                             (input port)
   Destination:            gen[1].gen2[4].knot/gen[2].mult/prod_r_reg/A[2]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.538ns  (logic 0.909ns (13.909%)  route 5.628ns (86.091%))
@@ -3361,7 +3361,7 @@ Slack:                    inf
     DSP48_X1Y3           DSP48E1                                      r  gen[1].gen2[4].knot/gen[2].mult/prod_r_reg/A[2]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3374,7 +3374,7 @@ Slack:                    inf
   Source:                 b_in[2]
                             (input port)
   Destination:            gen[1].gen2[3].knot/gen[2].mult/prod_r_reg/A[2]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.513ns  (logic 0.909ns (13.961%)  route 5.604ns (86.039%))
@@ -3398,7 +3398,7 @@ Slack:                    inf
     DSP48_X1Y39          DSP48E1                                      r  gen[1].gen2[3].knot/gen[2].mult/prod_r_reg/A[2]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3411,7 +3411,7 @@ Slack:                    inf
   Source:                 r_in[4]
                             (input port)
   Destination:            gen[1].gen2[4].knot/gen[0].mult/prod_r_reg/A[4]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.506ns  (logic 0.946ns (14.542%)  route 5.560ns (85.458%))
@@ -3435,7 +3435,7 @@ Slack:                    inf
     DSP48_X1Y2           DSP48E1                                      r  gen[1].gen2[4].knot/gen[0].mult/prod_r_reg/A[4]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3448,7 +3448,7 @@ Slack:                    inf
   Source:                 b_in[3]
                             (input port)
   Destination:            gen[1].gen2[3].knot/gen[2].mult/prod_r_reg/A[3]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.497ns  (logic 0.899ns (13.843%)  route 5.598ns (86.157%))
@@ -3472,7 +3472,7 @@ Slack:                    inf
     DSP48_X1Y39          DSP48E1                                      r  gen[1].gen2[3].knot/gen[2].mult/prod_r_reg/A[3]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3485,7 +3485,7 @@ Slack:                    inf
   Source:                 r_in[5]
                             (input port)
   Destination:            gen[1].gen2[2].knot/gen[0].mult/prod_r_reg/A[5]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Setup (Max at Slow Process Corner)
   Data Path Delay:        6.494ns  (logic 0.931ns (14.342%)  route 5.562ns (85.658%))
@@ -3509,7 +3509,7 @@ Slack:                    inf
     DSP48_X1Y12          DSP48E1                                      r  gen[1].gen2[2].knot/gen[0].mult/prod_r_reg/A[5]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.778     0.778 r  clk_IBUF_inst/O
@@ -3528,7 +3528,7 @@ Slack:                    inf
   Source:                 vs_in
                             (input port)
   Destination:            vs_0_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.629ns  (logic 0.208ns (33.066%)  route 0.421ns (66.934%))
@@ -3547,7 +3547,7 @@ Slack:                    inf
     SLICE_X0Y33          FDRE                                         r  vs_0_reg/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3560,7 +3560,7 @@ Slack:                    inf
   Source:                 hs_in
                             (input port)
   Destination:            hs_0_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.670ns  (logic 0.233ns (34.836%)  route 0.437ns (65.164%))
@@ -3579,7 +3579,7 @@ Slack:                    inf
     SLICE_X0Y33          FDRE                                         r  hs_0_reg/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3592,7 +3592,7 @@ Slack:                    inf
   Source:                 de_in
                             (input port)
   Destination:            de_0_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.677ns  (logic 0.194ns (28.576%)  route 0.484ns (71.424%))
@@ -3611,7 +3611,7 @@ Slack:                    inf
     SLICE_X0Y33          FDRE                                         r  de_0_reg/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3624,7 +3624,7 @@ Slack:                    inf
   Source:                 b_in[0]
                             (input port)
   Destination:            gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[0]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.751ns  (logic 0.194ns (25.867%)  route 0.556ns (74.133%))
@@ -3643,7 +3643,7 @@ Slack:                    inf
     DSP48_X0Y1           DSP48E1                                      r  gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[0]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3656,7 +3656,7 @@ Slack:                    inf
   Source:                 b_in[1]
                             (input port)
   Destination:            gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[1]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.823ns  (logic 0.207ns (25.121%)  route 0.616ns (74.879%))
@@ -3675,7 +3675,7 @@ Slack:                    inf
     DSP48_X0Y1           DSP48E1                                      r  gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[1]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3688,7 +3688,7 @@ Slack:                    inf
   Source:                 reset_n
                             (input port)
   Destination:            reset_reg/D
-                            (rising edge-triggered cell FDRE clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.832ns  (logic 0.279ns (33.484%)  route 0.554ns (66.516%))
@@ -3709,7 +3709,7 @@ Slack:                    inf
     SLICE_X0Y37          FDRE                                         r  reset_reg/D
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3722,7 +3722,7 @@ Slack:                    inf
   Source:                 b_in[3]
                             (input port)
   Destination:            gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[3]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.838ns  (logic 0.196ns (23.418%)  route 0.641ns (76.582%))
@@ -3741,7 +3741,7 @@ Slack:                    inf
     DSP48_X0Y1           DSP48E1                                      r  gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[3]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3754,7 +3754,7 @@ Slack:                    inf
   Source:                 b_in[5]
                             (input port)
   Destination:            gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[5]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.842ns  (logic 0.194ns (23.061%)  route 0.648ns (76.939%))
@@ -3773,7 +3773,7 @@ Slack:                    inf
     DSP48_X0Y1           DSP48E1                                      r  gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[5]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3786,7 +3786,7 @@ Slack:                    inf
   Source:                 g_in[0]
                             (input port)
   Destination:            gen[1].gen2[5].knot/gen[1].mult/prod_r_reg/A[0]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.868ns  (logic 0.239ns (27.490%)  route 0.629ns (72.510%))
@@ -3805,7 +3805,7 @@ Slack:                    inf
     DSP48_X0Y3           DSP48E1                                      r  gen[1].gen2[5].knot/gen[1].mult/prod_r_reg/A[0]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O
@@ -3818,7 +3818,7 @@ Slack:                    inf
   Source:                 b_in[6]
                             (input port)
   Destination:            gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[6]
-                            (rising edge-triggered cell DSP48E1 clocked by clk_in  {rise@0.000ns fall@6.734ns period=13.468ns})
+                            (rising edge-triggered cell DSP48E1 clocked by clk  {rise@0.000ns fall@6.734ns period=13.468ns})
   Path Group:             (none)
   Path Type:              Hold (Min at Fast Process Corner)
   Data Path Delay:        0.868ns  (logic 0.198ns (22.829%)  route 0.670ns (77.171%))
@@ -3837,7 +3837,7 @@ Slack:                    inf
     DSP48_X0Y1           DSP48E1                                      r  gen[1].gen2[1].knot/gen[2].mult/prod_r_reg/A[6]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk_in rise edge)     0.000     0.000 r  
+                         (clock clk rise edge)        0.000     0.000 r  
     AB21                                              0.000     0.000 r  clk (IN)
                          net (fo=0)                   0.000     0.000    clk
     AB21                 IBUF (Prop_ibuf_I_O)         0.395     0.395 r  clk_IBUF_inst/O

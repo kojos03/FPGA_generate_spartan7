@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-| Date         : Thu Mar 19 21:56:00 2026
+| Date         : Thu Mar 19 22:28:08 2026
 | Host         : DESKTOP-0NKI8SO running 64-bit major release  (build 9200)
 | Command      : report_utilization -file {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7/reports/utilization_synth.rpt}
 | Design       : nn_rgb
@@ -96,9 +96,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   60 |    60 |          0 |       400 | 15.00 |
-|   IOB Master Pads           |   28 |       |            |           |       |
-|   IOB Slave Pads            |   30 |       |            |           |       |
+| Bonded IOB                  |   60 |     0 |          0 |       400 | 15.00 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         8 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         8 |  0.00 |
