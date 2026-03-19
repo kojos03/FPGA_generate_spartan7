@@ -1,0 +1,390 @@
+m255
+K3
+z0
+!s11e MIXED_VERSIONS
+13
+cModel Technology
+dD:\tepak\kinmaster\sha512_80_reg
+Pconfig
+Z0 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 27
+w1769186274
+Z3 dC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/sim
+8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd
+FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd
+l0
+L5 1
+V1]le4@oPK8Kkf6VSa?<I?2
+!s100 ]_EZz7RHQ]:9Jkfizdh]M0
+Z4 OV;C;2020.1;71
+32
+!s110 1773926319
+!i10b 1
+!s108 1773926318.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd|
+!s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd|
+!i113 1
+Z5 o-work work -2002 -explicit
+Z6 tExplicit 1 CvgOpt 0
+Econtrol
+Z7 w1769186280
+R0
+R1
+R2
+!i122 28
+R3
+Z8 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd
+Z9 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd
+l0
+L5 1
+VDRgQaL3=Uo5AVZZRTTnT73
+!s100 Ri_MNfFL1HFXUUa4d=XRg1
+R4
+32
+Z10 !s110 1773926320
+!i10b 1
+Z11 !s108 1773926320.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd|
+Z13 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd|
+!i113 1
+R5
+R6
+Abehave
+R0
+R1
+R2
+Z14 DEx4 work 7 control 0 22 DRgQaL3=Uo5AVZZRTTnT73
+!i122 28
+l25
+L17 43
+VN3=dVi`9D[V:i;:fc;CXE1
+!s100 Wo<]Fd`D5Qe0fPTXS=Ue40
+R4
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R5
+R6
+Emultiplier
+Z15 w1762097216
+R0
+Z16 DPx4 work 6 config 0 22 1]le4@oPK8Kkf6VSa?<I?2
+R1
+R2
+!i122 29
+R3
+Z17 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd
+Z18 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd
+l0
+L8 1
+VB^7i0F<[UfWETES`Am?ee1
+!s100 8EPSJ@0?=NSD@zXN8VJ<E0
+R4
+32
+Z19 !s110 1773926321
+!i10b 1
+Z20 !s108 1773926321.000000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd|
+Z22 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd|
+!i113 1
+R5
+R6
+Abehave
+R0
+R16
+R1
+R2
+Z23 DEx4 work 10 multiplier 0 22 B^7i0F<[UfWETES`Am?ee1
+!i122 29
+l24
+L19 15
+VTi;@fTIPz<IM_;1Eeg>A^0
+!s100 Z>i:E]`Om[9M;H8[kBjgl3
+R4
+32
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R5
+R6
+Eneuron
+Z24 w1762097214
+R16
+R0
+R1
+R2
+!i122 30
+R3
+Z25 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd
+Z26 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd
+l0
+L11 1
+VB58_T[k[P3^^_R8V1Eii`0
+!s100 >bb?=PWPD[K7<Y>@CDNXi0
+R4
+32
+R19
+!i10b 1
+R20
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd|
+Z28 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd|
+!i113 1
+R5
+R6
+Abehave
+Z29 DEx4 work 10 sigmoid_ip 0 22 VJ:Td`[8OXB;cFn<:ilmL1
+R23
+R16
+R0
+R1
+R2
+Z30 DEx4 work 6 neuron 0 22 B58_T[k[P3^^_R8V1Eii`0
+!i122 30
+l28
+L19 68
+V0J]ZB82Df_deVzVBgd6gB2
+!s100 l^I@]a?J23YYBg7V:]h`00
+R4
+32
+R19
+!i10b 1
+R20
+R27
+R28
+!i113 1
+R5
+R6
+Enn_rgb
+Z31 w1773910036
+R16
+R0
+R1
+R2
+!i122 31
+R3
+Z32 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd
+Z33 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd
+l0
+L9 1
+VN3VjnK;5kNY=EGLc>dMBo3
+!s100 d@5o5@UA69M3F2F]mRT@70
+R4
+32
+Z34 !s110 1773926322
+!i10b 1
+Z35 !s108 1773926322.000000
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd|
+Z37 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd|
+!i113 1
+R5
+R6
+Abehave
+R14
+R30
+R16
+R0
+R1
+R2
+Z38 DEx4 work 6 nn_rgb 0 22 N3VjnK;5kNY=EGLc>dMBo3
+!i122 31
+l50
+L32 121
+V;_Md[RPoRPlIZ6OEL_nZ13
+!s100 R:Rof<8=@eN41H6;CM0dl2
+R4
+32
+R34
+!i10b 1
+R35
+R36
+R37
+!i113 1
+R5
+R6
+Esigmoid_ip
+Z39 w1760522665
+R1
+R2
+!i122 32
+R3
+Z40 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_IP.vhd
+Z41 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_IP.vhd
+l0
+L40 1
+VVJ:Td`[8OXB;cFn<:ilmL1
+!s100 nZnHEQ7c^NjF[WaMDmnYD1
+R4
+32
+R34
+!i10b 1
+R35
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_IP.vhd|
+Z43 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_IP.vhd|
+!i113 1
+R5
+R6
+Artl
+R1
+R2
+R29
+!i122 32
+l69
+L48 30
+VgnGN1<d5;glL[laU949hJ0
+!s100 JM5VeezBFGVI[eAQW5bNj3
+R4
+32
+R34
+!i10b 1
+R35
+R42
+R43
+!i113 1
+R5
+R6
+Esigmoid_lut
+Z44 w1773925346
+R0
+R1
+R2
+!i122 33
+R3
+Z45 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd
+Z46 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd
+l0
+L7 1
+VSgfI]60UEozUk9?Cb1PQb0
+!s100 RAROIUgmoV<Yf2iATfOTR1
+R4
+32
+R34
+!i10b 1
+R35
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd|
+Z48 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd|
+!i113 1
+R5
+R6
+Artl
+R0
+R1
+R2
+DEx4 work 11 sigmoid_lut 0 22 SgfI]60UEozUk9?Cb1PQb0
+!i122 33
+l39
+L16 53
+VN:K3BJDeTR?<Z91l]zAEh3
+!s100 :`UfQG1GR1@0cXEOk]K@70
+R4
+32
+R34
+!i10b 1
+R35
+R47
+R48
+!i113 1
+R5
+R6
+Esim_nn_rgb
+Z49 w1738754666
+Z50 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R0
+R1
+R2
+!i122 34
+R3
+Z51 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sim_nn_rgb.vhd
+Z52 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sim_nn_rgb.vhd
+l0
+L17 1
+VaAfU1@iM2cNmRn=?Okdbd0
+!s100 ^iW;`i7]nj`D]g2_I<`bZ3
+R4
+32
+R34
+!i10b 1
+R35
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sim_nn_rgb.vhd|
+Z54 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sim_nn_rgb.vhd|
+!i113 1
+R5
+R6
+Asim
+R16
+R38
+R50
+R0
+R1
+R2
+DEx4 work 10 sim_nn_rgb 0 22 aAfU1@iM2cNmRn=?Okdbd0
+!i122 34
+l50
+L20 199
+V=ciHFCVamAn]Tag[mF1Pi2
+!s100 M4i<QBVDG:J@V31e=[GYk1
+R4
+32
+R34
+!i10b 1
+R35
+R53
+R54
+!i113 1
+R5
+R6
+Etb_nn_rgb
+Z55 w1759243761
+R50
+R0
+R1
+R2
+!i122 35
+R3
+Z56 8C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/tb_nn_rgb.vhd
+Z57 FC:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/tb_nn_rgb.vhd
+l0
+L9 1
+V8ChY9F5fDg5dWHA<3NMQ83
+!s100 Mh;6JX23kR<mH>`VfTSzl2
+R4
+32
+Z58 !s110 1773926323
+!i10b 1
+Z59 !s108 1773926323.000000
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/tb_nn_rgb.vhd|
+Z61 !s107 C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/tb_nn_rgb.vhd|
+!i113 1
+R5
+R6
+Asim
+R16
+R38
+R50
+R0
+R1
+R2
+Z62 DEx4 work 9 tb_nn_rgb 0 22 8ChY9F5fDg5dWHA<3NMQ83
+!i122 35
+l42
+Z63 L12 145
+Z64 VXJXGiF1DQl4^6ioM6IhCf3
+Z65 !s100 12d1o^i3aR>PmS;e?CABh0
+R4
+32
+R58
+!i10b 1
+R59
+R60
+R61
+!i113 1
+R5
+R6

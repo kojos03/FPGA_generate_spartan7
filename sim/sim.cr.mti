@@ -1,0 +1,83 @@
+{C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/control.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity control
+-- Compiling architecture behave of control
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sim_nn_rgb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sim_nn_rgb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity sim_nn_rgb
+-- Compiling architecture sim of sim_nn_rgb
+-- Loading package CONFIG
+-- Loading entity nn_rgb
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/config.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package CONFIG
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/nn_rgb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package CONFIG
+-- Compiling entity nn_rgb
+-- Compiling architecture behave of nn_rgb
+-- Loading entity neuron
+-- Loading entity control
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/tb_nn_rgb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/tb_nn_rgb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity tb_nn_rgb
+-- Compiling architecture sim of tb_nn_rgb
+-- Loading package CONFIG
+-- Loading entity nn_rgb
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/neuron.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package CONFIG
+-- Compiling entity neuron
+-- Compiling architecture behave of neuron
+-- Loading entity multiplier
+-- Loading entity sigmoid_IP
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/multiplier.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package CONFIG
+-- Compiling entity multiplier
+-- Compiling architecture behave of multiplier
+
+} {} {}} {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/VHDL/sigmoid_lut.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sigmoid_lut
+-- Compiling architect
