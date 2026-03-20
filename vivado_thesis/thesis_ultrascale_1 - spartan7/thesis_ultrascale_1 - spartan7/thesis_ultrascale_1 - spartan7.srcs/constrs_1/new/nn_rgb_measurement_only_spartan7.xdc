@@ -4,4 +4,4 @@
 # Not for board bring-up and intentionally no package pin assignments.
 # -----------------------------------------------------------------------------
 
-create_clock -name clk -period 12.500 [get_ports clk]
+create_clock -name clk -period 11.765 [get_ports clk]
