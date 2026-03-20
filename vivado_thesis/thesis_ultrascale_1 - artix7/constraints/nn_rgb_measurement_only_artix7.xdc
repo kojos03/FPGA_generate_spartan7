@@ -4,5 +4,5 @@
 # This file is NOT for real hardware deployment or board bring-up.
 # -----------------------------------------------------------------------------
 
-# Primary pixel-processing clock (74.25 MHz)
-create_clock -name clk -period 13.468 [get_ports clk]
+# Primary pixel-processing clock (85.0 MHz tighter tested thesis target)
+create_clock -name clk -period 11.765 [get_ports clk]
