@@ -1,4 +1,4 @@
-# Spartan-7 Thesis Measurement Summary
+ï»¿# Spartan-7 Thesis Measurement Summary
 
 - Target part: `xc7s100fgga676-2`
 - Top module: `nn_rgb`
@@ -9,15 +9,17 @@
 | Step | Period (ns) | Frequency (MHz) | WNS (ns) | TNS (ns) | Met? |
 |---|---:|---:|---:|---:|---|
 | Original baseline (given) | 13.468 | 74.25 | 1.11 | N/A | Yes |
-| Previous tightened test | 12.500 | 80.0 | 0.856 | 0.000 | Yes |
-| New tightened test (current) | 11.765 | 85.0 | 0.632 | 0.000 | Yes |
+| Tightened step 1 | 12.500 | 80.0 | 0.856 | 0.000 | Yes |
+| Tightened step 2 | 11.765 | 85.0 | 0.632 | 0.000 | Yes |
+| Tightened step 3 | 11.236 | 89.0 | 0.176 | 0.000 | Yes |
+| Final pushed step (current) | 11.111 | 90.0 | 0.029 | 0.000 | Yes |
 
 ## Current Resource Results (Post-Route)
 
 | Metric | Value |
 |---|---:|
-| LUT | 4989 |
-| FF | 1013 |
+| LUT | 5060 |
+| FF | 1211 |
 | DSP | 98 |
 | BRAM | 0 |
 
@@ -30,27 +32,39 @@
 
 ## Throughput Formula
 
-`Throughput = (Data Bits or Samples / Clock Cycles) × Clock Frequency`
+`Throughput = (Data Bits or Samples / Clock Cycles) Ã— Clock Frequency`
 
 ## Throughput Calculations
 
 ### At original 74.25 MHz
-- Samples/s: `(1 sample/cycle) × 74.25e6 cycle/s = 74.25e6 samples/s`
-- Pixels/s: `(1 pixel/cycle) × 74.25e6 cycle/s = 74.25e6 pixels/s`
-- Bits/s: `(24 bits/cycle) × 74.25e6 cycle/s = 1.782e9 bits/s`
+- Samples/s: `(1 sample/cycle) Ã— 74.25e6 cycle/s = 74.25e6 samples/s`
+- Pixels/s: `(1 pixel/cycle) Ã— 74.25e6 cycle/s = 74.25e6 pixels/s`
+- Bits/s: `(24 bits/cycle) Ã— 74.25e6 cycle/s = 1.782e9 bits/s`
 - Gbps: `1.782e9 / 1e9 = 1.782 Gbps`
 
-### At previous tightened 80.0 MHz
-- Samples/s: `(1 sample/cycle) × 80.0e6 cycle/s = 80.0e6 samples/s`
-- Pixels/s: `(1 pixel/cycle) × 80.0e6 cycle/s = 80.0e6 pixels/s`
-- Bits/s: `(24 bits/cycle) × 80.0e6 cycle/s = 1.920e9 bits/s`
+### At tightened step 1: 80.0 MHz
+- Samples/s: `(1 sample/cycle) Ã— 80.0e6 cycle/s = 80.0e6 samples/s`
+- Pixels/s: `(1 pixel/cycle) Ã— 80.0e6 cycle/s = 80.0e6 pixels/s`
+- Bits/s: `(24 bits/cycle) Ã— 80.0e6 cycle/s = 1.920e9 bits/s`
 - Gbps: `1.920e9 / 1e9 = 1.920 Gbps`
 
-### At new tightened 85.0 MHz
-- Samples/s: `(1 sample/cycle) × 85.0e6 cycle/s = 85.0e6 samples/s`
-- Pixels/s: `(1 pixel/cycle) × 85.0e6 cycle/s = 85.0e6 pixels/s`
-- Bits/s: `(24 bits/cycle) × 85.0e6 cycle/s = 2.040e9 bits/s`
+### At tightened step 2: 85.0 MHz
+- Samples/s: `(1 sample/cycle) Ã— 85.0e6 cycle/s = 85.0e6 samples/s`
+- Pixels/s: `(1 pixel/cycle) Ã— 85.0e6 cycle/s = 85.0e6 pixels/s`
+- Bits/s: `(24 bits/cycle) Ã— 85.0e6 cycle/s = 2.040e9 bits/s`
 - Gbps: `2.040e9 / 1e9 = 2.040 Gbps`
+
+### At tightened step 3: 89.0 MHz
+- Samples/s: `(1 sample/cycle) Ã— 89.0e6 cycle/s = 89.0e6 samples/s`
+- Pixels/s: `(1 pixel/cycle) Ã— 89.0e6 cycle/s = 89.0e6 pixels/s`
+- Bits/s: `(24 bits/cycle) Ã— 89.0e6 cycle/s = 2.136e9 bits/s`
+- Gbps: `2.136e9 / 1e9 = 2.136 Gbps`
+
+### At final pushed step: 90.0 MHz
+- Samples/s: `(1 sample/cycle) Ã— 90.0e6 cycle/s = 90.0e6 samples/s`
+- Pixels/s: `(1 pixel/cycle) Ã— 90.0e6 cycle/s = 90.0e6 pixels/s`
+- Bits/s: `(24 bits/cycle) Ã— 90.0e6 cycle/s = 2.160e9 bits/s`
+- Gbps: `2.160e9 / 1e9 = 2.160 Gbps`
 
 ## Notes
 

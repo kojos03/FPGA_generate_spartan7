@@ -1,7 +1,7 @@
 # Spartan-7 thesis measurement flow
 # Usage: vivado -mode batch -source run_spartan7_measurements.tcl
 
-set proj_dir [file normalize [file dirname [info script]]]
+set proj_dir "C:/Users/OmilosNeonTexn/Desktop/tepak/erevna/FPGA_generate - Copy/vivado_thesis/thesis_ultrascale_1 - spartan7/thesis_ultrascale_1 - spartan7"
 set proj_file [file join $proj_dir "thesis_ultrascale_1 - spartan7.xpr"]
 set report_dir [file join $proj_dir "reports"]
 
