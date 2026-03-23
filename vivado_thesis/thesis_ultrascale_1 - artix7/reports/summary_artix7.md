@@ -3,6 +3,7 @@
 - Target part: `xc7a200tfbg676-2`
 - Top module: `nn_rgb`
 - Implementation status: `Completed through routing (impl_1 route_design complete)`
+- Highest tested passing frequency: `92.0 MHz`
 
 ## Clock Sweep Results
 
@@ -12,14 +13,15 @@
 | Tightened step 1 | 11.765 | 85.0 | 0.574 | 0.000 | Yes |
 | Tightened step 2 | 11.364 | 88.0 | 0.324 | 0.000 | Yes |
 | Tightened step 3 | 11.111 | 90.0 | 0.140 | 0.000 | Yes |
-| Final pushed step (current) | 10.989 | 91.0 | 0.192 | 0.000 | Yes |
+| Tightened step 4 | 10.989 | 91.0 | 0.192 | 0.000 | Yes |
+| Final pushed step (current) | 10.870 | 92.0 | 0.345 | 0.000 | Yes |
 
 ## Current Resource Results (Post-Route)
 
 | Metric | Value |
 |---|---:|
-| LUT | 5066 |
-| FF | 1243 |
+| LUT | 5063 |
+| FF | 1244 |
 | DSP | 98 |
 | BRAM | 0 |
 
@@ -60,13 +62,20 @@
 - Bits/s: `(24 bits/cycle) × 90.0e6 cycle/s = 2.160e9 bits/s`
 - Gbps: `2.160e9 / 1e9 = 2.160 Gbps`
 
-### At final pushed step: 91.0 MHz
+### At tightened step 4: 91.0 MHz
 - Samples/s: `(1 sample/cycle) × 91.0e6 cycle/s = 91.0e6 samples/s`
 - Pixels/s: `(1 pixel/cycle) × 91.0e6 cycle/s = 91.0e6 pixels/s`
 - Bits/s: `(24 bits/cycle) × 91.0e6 cycle/s = 2.184e9 bits/s`
 - Gbps: `2.184e9 / 1e9 = 2.184 Gbps`
 
+### At final pushed step: 92.0 MHz
+- Samples/s: `(1 sample/cycle) × 92.0e6 cycle/s = 92.0e6 samples/s`
+- Pixels/s: `(1 pixel/cycle) × 92.0e6 cycle/s = 92.0e6 pixels/s`
+- Bits/s: `(24 bits/cycle) × 92.0e6 cycle/s = 2.208e9 bits/s`
+- Gbps: `2.208e9 / 1e9 = 2.208 Gbps`
+
 ## Notes
 
 - Thesis measurement flow only (not board deployment constraints).
 - Simulation-only files are excluded from synthesis/implementation.
+- No exploratory failure occurred at this step; 92.0 MHz passed in this run.
