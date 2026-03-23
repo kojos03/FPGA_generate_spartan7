@@ -2,7 +2,7 @@
 
 - Target part: `xc7a200tfbg676-2`
 - Top module: `nn_rgb`
-- Implementation status: `Completed through routing (impl_1 route_design complete), timing not met at 95.0 MHz exploratory run`
+- Implementation status: `Completed through routing (impl_1 route_design complete), stable timing met at 94.0 MHz`
 - Highest tested passing frequency so far: `94.0 MHz`
 - Failed exploratory frequency: `95.0 MHz`
 
@@ -16,15 +16,15 @@
 | Tightened step 3 | 11.111 | 90.0 | 0.140 | 0.000 | Yes |
 | Tightened step 4 | 10.989 | 91.0 | 0.192 | 0.000 | Yes |
 | Tightened step 5 | 10.870 | 92.0 | 0.345 | 0.000 | Yes |
-| Tightened step 6 | 10.638 | 94.0 | 0.171 | 0.000 | Yes |
-| Final pushed step (current exploratory) | 10.526 | 95.0 | -0.178 | -0.468 | No |
+| Final stable step (current) | 10.638 | 94.0 | 0.171 | 0.000 | Yes |
+| Failed exploratory step | 10.526 | 95.0 | -0.178 | -0.468 | No |
 
-## Current Resource Results (Post-Route at 95.0 MHz run)
+## Current Resource Results (Post-Route at stable 94.0 MHz)
 
 | Metric | Value |
 |---|---:|
-| LUT | 5091 |
-| FF | 1228 |
+| LUT | 5085 |
+| FF | 1245 |
 | DSP | 98 |
 | BRAM | 0 |
 
@@ -77,24 +77,17 @@
 - Bits/s: `(24 bits/cycle) × 92.0e6 cycle/s = 2.208e9 bits/s`
 - Gbps: `2.208e9 / 1e9 = 2.208 Gbps`
 
-### At tightened step 6: 94.0 MHz
+### At final stable step: 94.0 MHz
 - Samples/s: `(1 sample/cycle) × 94.0e6 cycle/s = 94.0e6 samples/s`
 - Pixels/s: `(1 pixel/cycle) × 94.0e6 cycle/s = 94.0e6 pixels/s`
 - Bits/s: `(24 bits/cycle) × 94.0e6 cycle/s = 2.256e9 bits/s`
 - Gbps: `2.256e9 / 1e9 = 2.256 Gbps`
 
-### At final pushed step: 95.0 MHz (exploratory)
-- Samples/s: `(1 sample/cycle) × 95.0e6 cycle/s = 95.0e6 samples/s`
-- Pixels/s: `(1 pixel/cycle) × 95.0e6 cycle/s = 95.0e6 pixels/s`
-- Bits/s: `(24 bits/cycle) × 95.0e6 cycle/s = 2.280e9 bits/s`
-- Gbps: `2.280e9 / 1e9 = 2.280 Gbps`
-
 ## Interpretation
 
-- 95.0 MHz fails timing (`WNS = -0.178 ns`, `TNS = -0.468 ns`), so the final stable passing point remains 94.0 MHz.
-- Since failure at 95.0 MHz is relatively small, the practical limit appears near the 94-95 MHz boundary.
-- From the failing run slack, rough implied `Tmin ≈ 10.526 - (-0.178) = 10.704 ns`, i.e. `Fmax ≈ 93.4 MHz` for that specific route.
-- Due run-to-run variability, the thesis-safe statement is: achievable stable operation is around the mid-90 MHz edge, with 94.0 MHz currently proven and 95.0 MHz not yet stable.
+- 94.0 MHz is the final stable passing frequency used for thesis reporting.
+- 95.0 MHz remains a failed exploratory point.
+- Practical limit is between 94 and 95 MHz.
 
 ## Notes
 
