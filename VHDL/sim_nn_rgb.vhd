@@ -2,11 +2,6 @@
 --
 -- testbench for nn_rgb
 -- reading and writing images in ppm-file format
---          ppm-file can be generated and viewed with IrfanView and probably other image viewers
---          verified with IrfanView version 4.54 - 64 bit and 4.44 - 64 bit
---
--- FPGA Vision Remote Lab http://h-brs.de/fpga-vision-lab
--- (c) Marco Winzker, Hochschule Bonn-Rhein-Sieg, 17.09.2020
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
