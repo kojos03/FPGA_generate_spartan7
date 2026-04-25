@@ -1,7 +1,4 @@
 -- neuron.vhd
---
--- FPGA Vision Remote Lab http://h-brs.de/fpga-vision-lab
--- (c) Thomas Florkowski, Hochschule Bonn-Rhein-Sieg, 16.05.2020
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
