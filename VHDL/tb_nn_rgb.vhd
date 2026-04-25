@@ -1,4 +1,4 @@
---- Testbench for nn_rgb from Dionysiou
+--- Testbench for nn_rgb
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
