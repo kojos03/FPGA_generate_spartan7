@@ -389,6 +389,9 @@ Suggested citation format, to be updated after official publication:
 
 This work was carried out at the Department of Electrical Engineering, Cyprus University of Technology. The author acknowledges the guidance and support received during the development of the thesis and conference paper, as well as the use of open-source tools and datasets that enabled this research.
 
+This project was inspired by the open-source [NN_RGB_FPGA](https://github.com/Marco-Winzker/NN_RGB_FPGA) project by Marco Winzker, which provided useful direction for FPGA-based neural-network implementation in VHDL.
+
+I would also like to thank the Student New Technologies Group for making this research journey more enjoyable, collaborative, and motivating.
 ---
 
 ## Author
