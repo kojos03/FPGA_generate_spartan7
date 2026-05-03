@@ -402,4 +402,4 @@ Email: `cs.dionysiou@edu.cut.ac.cy`
 
 ## License
 
-No license is specified in this README. Add a `LICENSE` file before others reuse, modify, or redistribute this repository.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
